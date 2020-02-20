@@ -1,0 +1,31 @@
+.sidenav{
+	
+	height:100%;
+	width:160px;
+	position: fixed; 
+	z-index: 1; 
+	top: 0; 
+	left: 0;
+	background-color: #111; 
+	overflow-x: hidden; 
+	padding-top: 20px;
+}
+
+.middle{
+    position:absolute;
+    height: X px;
+    width: Y px;
+    left:50%;
+    top:50%;
+    margin-top:- X/2 px;
+    margin-left:- Y/2 px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
