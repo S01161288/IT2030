@@ -49,7 +49,7 @@ namespace StudentEnrollment.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,StudentId,CourseId,Grade")] Enrollment enrollment)
+        public ActionResult Create([Bind(Include = "Id,StudentId,CourseId,Grade,IsActive,AssingedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace StudentEnrollment.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,StudentId,CourseId,Grade")] Enrollment enrollment)
+        public ActionResult Edit([Bind(Include = "Id,StudentId,CourseId,Grade,IsActive,AssingedCampus,EnrollmentSemester,EnrollmentYear")] Enrollment enrollment)
         {
             if (ModelState.IsValid)
             {

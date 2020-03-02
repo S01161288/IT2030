@@ -20,26 +20,52 @@
         <th>
             @Html.DisplayNameFor(model => model.Grade)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssingedCampus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentSemester)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentYear)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Course.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Student.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Grade)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Course.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Student.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Grade)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IsActive)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AssingedCampus)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EnrollmentSemester)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EnrollmentYear)
+    </td>
+
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
 }
 
 </table>

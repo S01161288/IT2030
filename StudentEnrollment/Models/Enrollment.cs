@@ -16,5 +16,15 @@ namespace StudentEnrollment.Models
         public virtual Course Course { get; set; }
 
         public virtual String Grade { get; set; }
+       
+        public virtual Boolean IsActive { get; set; }
+        
+        public virtual String AssingedCampus { get; set; }
+
+        public virtual String EnrollmentSemester { get; set; }
+
+        public virtual int EnrollmentYear { get; set; }
+
+
     }
 }
