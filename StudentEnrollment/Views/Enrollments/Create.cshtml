@@ -55,18 +55,18 @@
         </div>
     </div>
 
-    
+
     <div class="form-group">
         @Html.LabelFor(model => model.EnrollmentSemester, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.RadioButtonFor(model => model.EnrollmentSemester,  "Spring") Spring
-            @Html.RadioButtonFor(model => model.EnrollmentSemester,  "Fall") Fall
+            @Html.RadioButtonFor(model => model.EnrollmentSemester, "Spring") Spring
+            @Html.RadioButtonFor(model => model.EnrollmentSemester, "Fall") Fall
             @Html.RadioButtonFor(model => model.EnrollmentSemester, "Summer") Summer
             @Html.ValidationMessageFor(model => model.EnrollmentSemester, "", new { @class = "text-danger" })
         </div>
     </div>
-    
-    
+
+
     <div class="form-group">
         @Html.LabelFor(model => model.EnrollmentYear, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -74,6 +74,22 @@
             @Html.ValidationMessageFor(model => model.EnrollmentYear, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    
+
+
+
+
+
 
 
     <div class="form-group">

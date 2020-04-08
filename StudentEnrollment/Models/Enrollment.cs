@@ -9,6 +9,9 @@ namespace StudentEnrollment.Models
     {
         public virtual int Id { get; set; }
 
+        
+        public virtual string Notes { get; set; }
+
         public virtual int StudentId { get; set; }
         public virtual  Student Student { get; set; }
 
