@@ -46,7 +46,7 @@ namespace StudentEnrollment.Models
             }
 
 
-            throw new NotImplementedException();
+            
         }
     }
 }

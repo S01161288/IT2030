@@ -142,6 +142,10 @@
     <Compile Include="Migrations\202003251724301_initial.Designer.cs">
       <DependentUpon>202003251724301_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004091945595_UpdateStudent.cs" />
+    <Compile Include="Migrations\202004091945595_UpdateStudent.Designer.cs">
+      <DependentUpon>202004091945595_UpdateStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\Enrollment.cs" />
@@ -223,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003251724301_initial.resx">
       <DependentUpon>202003251724301_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004091945595_UpdateStudent.resx">
+      <DependentUpon>202004091945595_UpdateStudent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
