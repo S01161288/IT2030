@@ -13,5 +13,17 @@ namespace OrrLab2.Controllers
         {
             return View();
         }
+        public ActionResult Browse()
+        {
+            return View();
+        }
+        public ActionResult Details()
+        {
+            return View();
+        }
+        public ActionResult Location()
+        {
+            return View();
+        }
     }
 }
