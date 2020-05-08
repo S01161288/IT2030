@@ -5,6 +5,47 @@
 }
 
 <h2>Index</h2>
+@*Add an Ajax Form which allows searching by student name Enrollment Index view.Video 3 4:00     *@
+<div class="panel panel-default">
+    <div class="panel-heading">Search</div>
+    <div class="panel-body">
+        @using (Ajax.BeginForm("StudentSearch", "Enrollments", new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET",
+            OnFailure = "searchFailed",
+            LoadingElementId = "ajax-loader",
+            UpdateTargetId = "searchresults"
+        }))
+        {
+            <input type="text" name="keyword" id="keyword" />
+            <input type="submit" value="search for student" />
+            <img id="ajax-loader"
+                 src="~/Content/Images/ajax_loader.gif"
+                 style="display:none" />
+
+        }
+        @using (Ajax.BeginForm("CourseSearch", "Enrollments", new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET",
+            OnFailure = "searchFailed",
+            LoadingElementId = "ajax-loader",
+            UpdateTargetId = "searchresults"
+        }))
+        {
+            <input type="text" name="keyword" id="keyword" />
+            <input type="submit" value="search for course" />
+            <img id="ajax-loader"
+                 src="~/Content/Images/ajax_loader.gif"
+                 style="display:none" />
+
+        }
+        <div id="searchresults"></div>
+    </div>
+</div>
+
+
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -35,37 +76,43 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Course.Title)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Student.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Grade)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IsActive)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AssingedCampus)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.EnrollmentSemester)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.EnrollmentYear)
-    </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssingedCampus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentSemester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentYear)
+            </td>
 
 
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </td>
-</tr>
-}
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>
+  @*Video 3 13:01*@
+  @section Scripts{
+ <Scripts src="~/Scripts/jquery-unobtrusive-ajax.js"></Scripts>
+ <Script src="~/Scripts/Apps/StudentScripts.js"></Script>
+}

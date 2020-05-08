@@ -112,7 +112,22 @@ namespace StudentEnrollment.Controllers
             }
             return View(enrollment);
         }
+        
+        // video 3 14:50 
+      //  public ActionResult CourseSearch(string q)
+      //  {
+            //var course = getCourse(q);
+          //  return PartialView(course);
+      // }
 
+        // Add a ActionMethod in the Enrollment controller named “CourseSearch” which returns a list of Course objects. 
+       // private List*<Course> getCourse(string searchString) {
+        //    return db.CourseId
+         //       where(a => a.Name.Contains(searchString)).toList();
+            
+        //    throw new NotImplementedException
+        
+            //    }
         // POST: Enrollments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -132,5 +147,31 @@ namespace StudentEnrollment.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpGet]
+        public ActionResult StudentSearch(string keyword)
+        {
+            List<Student> studentModel = db.Students.Where(student => student.FirstName.Contains(keyword) ||
+            student.LastName.Contains(keyword)).ToList();
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_StudentSearch", studentModel);
+            }
+
+            return PartialView(studentModel);
+        }
+        [HttpGet]
+        public ActionResult CourseSearch(string keyword)
+        {
+            List<Course> courseModel = db.Courses.Where(course => course.Title.Contains(keyword) ||
+            course.Description.Contains(keyword)).ToList();
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_CourseSearch", courseModel);
+            }
+
+            return PartialView(courseModel);
+        }
     }
 }
+

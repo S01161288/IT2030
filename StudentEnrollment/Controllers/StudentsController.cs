@@ -20,6 +20,33 @@ namespace StudentEnrollment.Controllers
             return View(db.Students.ToList());
         }
 
+        // Add a ActionMethod in the Student controller named “StudentOfTheMonth” which returns a random Student object. Video 2 8:45
+        public ActionResult StudentOfTheMonth()
+        {
+            Student studentModel = db.Students.OrderBy(student => Guid.NewGuid()).FirstOrDefault();
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_StudentOfTheMonth", studentModel);
+            }
+
+            return PartialView(studentModel);
+        }
+
+        // private List*<Course> getStudent(string searchString)
+        // {
+        //  return db.Student
+        //       where(a => a.Name.Contains(searchString)).toList();
+
+        //  throw new NotImplementedException
+
+
+        //     }
+
+
+
+
+
         // GET: Students/Details/5
         public ActionResult Details(int? id)
         {
