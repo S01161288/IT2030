@@ -1,0 +1,34 @@
+﻿@{
+        ViewBag.Title = "Home Page";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Find an Event</h1>
+                    <input type="text" name="eventKey" id="eventKey" placeholder="Event or Event Type" />
+                    <input type="text" name="locationKey" id="locationKey" placeholder="Location, City, or State" />
+                    @Html.ActionLink("search", "Index", "Event")
+                </div>
+                <div class="col-md-4">
+                    <div id="lastminutedeals" class="border border-primary">
+                        @Ajax.ActionLink("Click here to see Last Minute Deals!",
+                        "LastMinuteDeals",
+                        null,
+                        new AjaxOptions
+                        {
+                            UpdateTargetId = "lastminutedeals",
+                            InsertionMode = InsertionMode.Replace,
+                            HttpMethod = "GET"
+                        },
+                        new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

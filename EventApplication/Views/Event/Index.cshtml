@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "FindEvent";
+}
+
+    <div class="container">
+        <h2>Find an event near you!</h2>
+        @using (Ajax.BeginForm("FindEvent", "Event", new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET",
+            OnFailure = "searchFailed",
+            LoadingElementId = "ajax-loader",
+            UpdateTargetId = "searchresults"
+        }))
+        {
+            <input type="text" name="eventKey" id="eventKey" placeholder="Event or Event Type" />
+            <input type="text" name="locationKey" id="locationKey" placeholder="Location, City, or State" />
+            <input type="submit" value="search" class="btn btn-primary" />
+            <img id="ajax-loader"
+                 src="~/Content/Images/ajax_loader.gif"
+                 style="display:none" />
+
+        }
+
+        <div id="searchresults"></div>
+    </div>

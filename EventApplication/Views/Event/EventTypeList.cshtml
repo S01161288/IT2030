@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EventApplication.Models.EventType>
+
+@{
+    ViewBag.Title = "EventTypeList";
+}
+
+<h2>EventTypeList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventTypeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventTypeName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditEventTypeDetail", new { id=item.EventTypeID }) |
+            
+            @Html.ActionLink("Delete", "DeleteEventType", new { id=item.EventTypeID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,24 @@
+﻿@model EventApplication.Models.Event
+
+@{
+    ViewBag.Title = "RegisterEvent";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Checkout", "Ticket", FormMethod.Post))
+{
+
+    <p>
+        Sale ends on @Html.DisplayFor(model => model.EndDateTime)
+        @Html.HiddenFor(model => model.EventID)
+    </p>
+    <p>
+        @Html.DisplayFor(model => model.Title)
+        @Html.HiddenFor(model => model.Title)
+    </p>
+    <p>Number of Tickets: @Html.DropDownListFor(model => model.AvailableTickets, Enumerable.Range(1, 10).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }))</p>
+    <p>FREE</p>
+
+    <input type="submit" value="Checkout" class="btn btn-primary" />
+}
