@@ -26,5 +26,10 @@ namespace OrrLab2.Controllers
 
             return View();
         }
+
+        public ActionResult Details()
+        {
+            return View();
+        }
     }
 }
